@@ -1,0 +1,17 @@
+.jumbotron-fluid{
+  text-align: center;
+}
+
+body{
+  font-family: 'Fredoka One', cursive;
+}
+.btn-outline-dark{
+  margin-bottom: 5px;
+}
+
+.addBurger{
+  text-align: center;
+}
+#burgerName{
+  width: 50%;
+}
