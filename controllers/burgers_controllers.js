@@ -5,11 +5,7 @@ var Burger = require("../models/burger.js");
 var Customer = require("../models/customer.js");
 
 //Create routes
-router.get("/", function(req, res) {
-    res.redirect("/burgers")
-});
-
-router.get("/burgers", function(req, res){
+router.get("/", function(req, res){
     Burger.findAll()
     .then(function(burger_data){
         console.log(burger_data);
