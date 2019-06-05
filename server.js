@@ -7,10 +7,8 @@ var exphbs = require("express-handlebars");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-//bring in models
-var models = require("./models")
-//sync the models
-models.sequelize.sync();
+//bring in db
+var db = require("./models")
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(__dirname + "/public"));
@@ -24,8 +22,11 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/burgers_controllers.js");
 app.use(routes);
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function(){
-    console.log("App listening on PORT " + PORT)
+//sync the db
+db.sequelize.sync().then(function() {
+    // Start our server so that it can begin listening to client requests.
+    app.listen(PORT, function(){
+        console.log("App listening on PORT " + PORT)
+    });
 });
 
