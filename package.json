@@ -25,5 +25,8 @@
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "sequelize": "^5.8.7"
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
   }
 }

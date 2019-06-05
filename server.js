@@ -20,7 +20,7 @@ app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/burgers_controllers.js");
-app.use(routes);
+app.use("/", routes);
 
 //sync the db
 db.sequelize.sync().then(function() {

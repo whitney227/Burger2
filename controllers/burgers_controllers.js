@@ -4,6 +4,11 @@ var router = express.Router();
 var Burger = require("../models/burger.js")["Burger"];
 var Customer = require("../models/customer.js")["Customer"];
 
+//GET route to index
+//router.get("/", function(req,res){
+  //  res.redirect("/burgers")
+//})
+
 //Create routes
 router.get("/", function(req, res){
     Burger.findAll({include: {model: Customer}})
