@@ -1,12 +1,12 @@
 //import Express and burger.js
 var express = require("express");
 var router = express.Router();
-var Burger = require("../models/burger.js");
-var Customer = require("../models/customer.js");
+var Burger = require("../models/burger.js")["Burger"];
+var Customer = require("../models/customer.js")["Customer"];
 
 //Create routes
 router.get("/", function(req, res){
-    Burger.findAll()
+    Burger.findAll({include: {model: Customer}})
     .then(function(burger_data){
         console.log(burger_data);
         return res.render("index", {burger_data})
